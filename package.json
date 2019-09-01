@@ -1,0 +1,27 @@
+{
+  "name": "node-jenkins-app-example",
+  "version": "1.0.0",
+  "description": "Simple Hello World Demo App",
+  "main": "server.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byomkesh99/node-app.git"
+  },
+  "author": "Byomkesh Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byomkesh99/node-app/issues"
+  },
+  "homepage": "https://github.com/byomkesh99/node-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.4.0",
+    "jasmine-node": "^3.0.0"
+  }
+}
