@@ -1,0 +1,42 @@
+version: '3'
+services:
+  appserver1:
+    image: node
+    container_name: appserver1
+    restart: always
+    working_dir: /usr/src/app
+    ports:
+      - 8082:8081
+    volumes:
+      - /var/lib/jenkins/workspace/node-app:/usr/src/app
+    command: node server
+    networks:
+      - compose-net
+      
+  appserver2:
+    image: node
+    container_name: appserver2
+    restart: always
+    working_dir: /usr/src/app
+    ports:
+      - 8083:8081
+    volumes:
+      - /var/lib/jenkins/workspace/node-app:/usr/src/app
+    command: node server
+    networks:
+      - compose-net
+# Nginx Service 
+  webserver:
+    image: nginx
+    container_name: webserver
+    volumes:
+      - /home/osboxes/nginx-lb:/etc/nginx/conf.d
+    restart: always
+    ports:
+      - 80:80
+    networks:
+      - compose-net
+
+networks:
+  compose-net:
+    driver: bridge
